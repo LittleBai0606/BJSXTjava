@@ -1,6 +1,7 @@
 package cn.bjsxt.net.socket;
 
 import java.io.BufferedWriter;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
@@ -20,13 +21,19 @@ public class Server {
         System.out.println("一个客户端客户端连接");
 
         String msg = "欢迎使用";
+        //输出流
 
+        /*
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
                 socket.getOutputStream()
         ));
         bw.write(msg);
+        bw.newLine();
         bw.flush();
+        */
         //不要关bw.close()
+        DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+        dos.writeUTF(msg);
 
     }
 }
