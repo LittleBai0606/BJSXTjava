@@ -1,9 +1,7 @@
 package cn.bjsxt.net.socket;
 
-import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -13,15 +11,16 @@ import java.net.Socket;
  * 2、接受客户端连接（阻R塞式）
  * 3、发送数据+接收数据
  */
-public class Server {
+public class MultiServer {
 
     public static void main(String[] args) throws IOException {
         ServerSocket server = new ServerSocket(8888);
-        Socket socket = server.accept();
-        System.out.println("一个客户端客户端连接");
+        while (true){//死循环，一个accept一个客户端
+            Socket socket = server.accept();
+            System.out.println("一个客户端客户端连接");
 
-        String msg = "欢迎使用";
-        //输出流
+            String msg = "欢迎使用";
+            //输出流
 
         /*
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
@@ -31,14 +30,12 @@ public class Server {
         bw.newLine();
         bw.flush();
         */
-        //不要关bw.close()
-        DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-        dos.writeUTF(msg);
-        dos.flush();
-
-        while (true) {
-
+            //不要关bw.close()
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+            dos.writeUTF(msg);
+            dos.flush();
         }
+
 
     }
 }
