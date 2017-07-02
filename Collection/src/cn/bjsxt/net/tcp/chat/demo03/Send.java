@@ -1,4 +1,4 @@
-package cn.bjsxt.net.tcp.chat.demo03.demo02;
+package cn.bjsxt.net.tcp.chat.demo03;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

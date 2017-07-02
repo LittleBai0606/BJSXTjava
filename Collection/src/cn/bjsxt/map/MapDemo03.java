@@ -19,7 +19,7 @@ public class MapDemo03 {
     /*
      *统计分析
      */
-    public static Map<String, ClassRoom> count(List<Student> list){
+    public static Map<String, ClassRoom> count(List<Student> list) {
         Map<String, ClassRoom> map = new HashMap<String, ClassRoom>();
         //遍历List
         for (Student stu : list){

@@ -1,4 +1,4 @@
-package cn.bjsxt.net.tcp.chat.demo03.demo02;
+package cn.bjsxt.net.tcp.chat.demo04;
 
 import java.io.Closeable;
 import java.io.IOException;

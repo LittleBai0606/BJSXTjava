@@ -1,4 +1,4 @@
-package cn.bjsxt.net.tcp.chat.demo03.demo02;
+package cn.bjsxt.net.tcp.chat.demo03;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -12,6 +12,7 @@ import java.net.Socket;
 public class Client {
 
     public static void main(String[] args) throws IOException {
+
 
         Socket client = new Socket("localhost", 9999);
         //控制台输入流
