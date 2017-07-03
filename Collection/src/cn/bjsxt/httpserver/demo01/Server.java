@@ -1,4 +1,4 @@
-package cn.bjsxt.server.demo01;
+package cn.bjsxt.httpserver.demo01;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,12 +9,12 @@ import java.net.Socket;
 /**
  * Created by BenWhite on 2017/7/3.
  */
-public class Server02 {
+public class Server {
 
     private ServerSocket server;
 
     public static void main(String[] args) {
-        Server02 server = new Server02();
+        Server server = new Server();
         server.start();
         server.receive();
         server.stop();
@@ -29,11 +29,20 @@ public class Server02 {
     }
 
     private void receive() {
+        String msg = "";
+        BufferedReader br = null;
+        StringBuilder sb = new StringBuilder();
         try {
             Socket client = server.accept();
-            byte[] data = new byte[20480];
-            int len = client.getInputStream().read(data);
-            String requestInfo = new String(data, 0 ,len).trim();
+            br = new BufferedReader(new InputStreamReader(client.getInputStream()));
+            while ((msg = br.readLine()).length() > 0 ) {
+                sb.append(msg);
+                sb.append("\r\n");
+                if(msg == null) {
+                    break;
+                }
+            }
+            String requestInfo = sb.toString().trim();
             System.out.println(requestInfo);
         } catch (IOException e) {
             e.printStackTrace();

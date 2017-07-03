@@ -1,11 +1,8 @@
-package cn.bjsxt.server.demo01;
+package cn.bjsxt.httpserver.demo01;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Date;
 
 /**
  * Created by BenWhite on 2017/7/3.

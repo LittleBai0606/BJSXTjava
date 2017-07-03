@@ -1,11 +1,12 @@
-package cn.bjsxt.server.demo01;
+package cn.bjsxt.httpserver.demo01;
+
+import cn.bjsxt.httpserver.util.CloseUtil;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
-import java.security.cert.CRL;
 import java.util.Date;
 
 

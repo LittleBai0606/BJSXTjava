@@ -1,4 +1,4 @@
-package cn.bjsxt.server.demo01;
+package cn.bjsxt.httpserver.util;
 
 import java.io.Closeable;
 import java.io.IOException;

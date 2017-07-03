@@ -1,13 +1,10 @@
-package cn.bjsxt.server.demo01;
-
-import com.sun.xml.internal.ws.client.ResponseContext;
+package cn.bjsxt.httpserver.demo01;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.security.cert.CRL;
 import java.util.Date;
 
 /**
