@@ -22,7 +22,6 @@ public class Client {
         if(name.equals("") || name.length() <= 2) {
             return;
         }
-
         Socket client = new Socket("localhost", 9999);
         //控制台输入流
         new Thread(new Send(client, name)).start();
